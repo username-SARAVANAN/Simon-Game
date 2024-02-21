@@ -16,7 +16,7 @@ function nextSequence() {
     .fadeOut(200)
     .fadeIn(200);
   level++;
-  $("h1").text("Level " + level);
+  $("#level-title").text("Level " + level);
 }
 
 $(".btn").click(function () {
@@ -52,11 +52,11 @@ function checkAnswer() {
   } else if (userClickedPattern[initialValue] == gamePattern[initialValue]) {
     initialValue++;
   } else {
-    // document.getElementsByTagName("h1").innerHTML="Wrong Pattern";
+    // document.getElementsByTagName("#level-title").innerHTML="Wrong Pattern";
     $("body").addClass("game-over");
-    $("#level-title").text("Wrong Pattern!");
+    $("#level-title").text("Wrong!");
     setTimeout(() => {
-      $("#level-title").text("Click Me to Start");
+      $("#level-title").text("Start");
       $("body").removeClass("game-over");
     }, 1000);
     makeSound("wrong");
